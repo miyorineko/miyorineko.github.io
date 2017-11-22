@@ -46,7 +46,7 @@
 			"Enable": true,
 			"Name": "default",
 			"ServerList": [
-				"quic://119.119.119.119:48100"
+				"quic://27.122.57.160:48100"
 			],
 			//if u are behind a HTTP proxy
 			"HTTPProxy": "",
