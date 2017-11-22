@@ -1,0 +1,66 @@
+{
+	"Log": [
+		"stdout"
+	],
+	"UserAgent": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:15.0) Gecko/20100101 Firefox/15.0.1",
+	"Cipher": {
+		"Method": "auto",
+		"Key": "809240d3a021449f6e67bb73221d42df942a308a"
+	},
+	"Auth": "gsnova",
+	"LocalDNS": {
+		//"Listen": "127.0.0.1:48100",
+		"FastDNS":["223.5.5.5","180.76.76.76"],
+		"TrustedDNS": [
+			"208.67.222.222:443",
+			"208.67.220.220:443"
+		],
+		"TCPConnect": true
+	},
+	//fake address, only used as udp protocol indicator
+	"UDPGW":{
+		"Addr":"20.20.20.20:1111",
+		"LocalDNSRecord":{
+			"*" : "111.111.111.111"
+		}
+	},
+	"SNI":{
+		//Used to redirect SNI host to another for sniffed SNI
+		"Redirect":{
+			//This fix "DF-DFERH-01" error in HW phone for google play 
+			"services.googleapis.cn":"services.googleapis.com"
+		}
+	},
+	"Proxy":[
+		{
+			"Local": ":48100",
+			"PAC":[
+				{"Protocol":["dns"],"Remote":"direct"},
+				{"Protocol":["udp"],"Remote":"direct"},
+				{"Remote":"default"}
+			]
+		}
+	],
+	"Channel": [
+		{
+			"Enable": true,
+			"Name": "default",
+			"ServerList": [
+				"quic://119.119.119.119:48100"
+			],
+			//if u are behind a HTTP proxy
+			"HTTPProxy": "",
+			"ConnsPerServer": 3,
+			//Unit: second
+			"DialTimeout": 5,
+			//Unit: second
+			"ReadTimeout": 15,
+			//Reconnect after 120s
+			"ReconnectPeriod": 2400,
+			//ReconnectPeriod rand adjustment, the real reconnect period is random value between [P - adjust, P + adjust] 
+			"RCPRandomAdjustment": 60,
+			//Send heartbeat msg to keep alive 
+			"HeartBeatPeriod": 30
+		}
+	]
+}
