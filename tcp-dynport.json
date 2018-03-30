@@ -50,13 +50,13 @@
             },
             "tag":"blocked"
         },
-		{
-			"protocol":"freedom"
-			"settings":{
-				"redirect": "miyorineko.github.io"
-			}
-			"tag":"restrict"
-		}
+	{
+		"protocol":"freedom",
+		"settings":{
+			"redirect": "miyorineko.github.io"
+		},
+		"tag":"restrict"
+	}
     ],
     "routing":{
         "strategy":"rules",
