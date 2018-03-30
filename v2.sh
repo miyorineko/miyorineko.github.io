@@ -10,15 +10,3 @@ else
 	clear_install
 	exit 1
 fi
-echo "5" > /etc/v2ray/install_type.txt
-if [[ $? -eq 0 ]];then
-	clear
-	echo -e "${ok_font}写入安装信息成功。"
-else
-	clear
-	echo -e "${error_font}写入安装信息失败！"
-	clear_install
-	exit 1
-fi
-restart_service
-echo_v2ray_config
