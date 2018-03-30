@@ -26,4 +26,6 @@ echo -e "Your connection info"
 echo -e "IP Addr.:${Address}"
 echo -e "UUID:${UUID}"
 echo -e "Vmess:${green_backgroundcolor}${vmesslink}${default_fontcolor}"
+iptables -A INPUT -p tcp --match multiport --dports 24110:30000 -j ACCEPT
+iptables -A INPUT -p udp --match multiport --dports 24110:30000 -j ACCEPT
 service v2ray restart
