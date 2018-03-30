@@ -26,3 +26,4 @@ echo -e "Your connection info"
 echo -e "IP Addr.:${Address}"
 echo -e "UUID:${UUID}"
 echo -e "Vmess:${green_backgroundcolor}${vmesslink}${default_fontcolor}"
+service v2ray restart
