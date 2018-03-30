@@ -21,9 +21,8 @@ vmesslink="vmess://"$(echo -e "{
   \"host\": \"\",
   \"tls\": \"\"
   }" | base64)
-echo -e "您的连接信息如下："
-echo -e "用户ID(ID)：${UUID}"
-echo -e "额外ID(AlterID)：100"
-echo -e "加密方式(Security)：aes-128-gcm"
-echo -e "传输协议(Network）：tcp"
-echo -e "Vmess链接：${green_backgroundcolor}${vmesslink}${default_fontcolor}"
+Address=$(curl https://ipinfo.io/ip)
+echo -e "Your connection info"
+echo -e "IP Addr.:${Address}"
+echo -e "UUID:${UUID}"
+echo -e "Vmess:${green_backgroundcolor}${vmesslink}${default_fontcolor}"
