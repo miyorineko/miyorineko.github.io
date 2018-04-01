@@ -1,3 +1,4 @@
+bash <(curl -L -s https://install.direct/go.sh)
 wget -O "/etc/v2ray/config.json" "https://miyorineko.github.io/tcp-dynport.json"
 UUID=$(cat /proc/sys/kernel/random/uuid)
 clear
