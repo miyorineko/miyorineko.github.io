@@ -29,4 +29,6 @@ echo -e "UUID:${UUID}"
 echo -e "Vmess:${green_backgroundcolor}${vmesslink}${default_fontcolor}"
 iptables -A INPUT -p tcp --match multiport --dports 24110:30000 -j ACCEPT
 iptables -A INPUT -p udp --match multiport --dports 24110:30000 -j ACCEPT
+apt-get install ntpdate
+ntpdate -s time.nist.gov
 service v2ray restart
