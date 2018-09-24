@@ -1,4 +1,4 @@
-import json,uuid
+import json,uuid,os
 ud=str(uuid.uuid4())
 with open('/etc/v2ray/config.json','r+') as f:
     data = json.load(f)
@@ -6,5 +6,5 @@ with open('/etc/v2ray/config.json','r+') as f:
     f.seek(0)
     json.dump(data,f,indent=4)
 print(ud)
-service v2ray restart
-systemctl restart v2ray
+os.system('service v2ray restart')
+os.system('systemctl restart v2ray')
