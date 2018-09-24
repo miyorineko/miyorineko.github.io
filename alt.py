@@ -6,3 +6,5 @@ with open('/etc/v2ray/config.json','r+') as f:
     f.seek(0)
     json.dump(data,f,indent=4)
 print(ud)
+service v2ray restart
+systemctl restart v2ray
