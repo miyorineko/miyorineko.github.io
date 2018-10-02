@@ -53,7 +53,7 @@
       "settings": {},
       "allocate": {
         "strategy": "random",
-        "concurrency": 5,
+        "concurrency": 1,
         "refresh": 5
       },
       "streamSettings": {
